@@ -24,9 +24,9 @@ public class UserController: ControllerBase
     {
         if (model.Password != model.ConfirmPassword)
         {
-            return BadRequest("Las contraseñas deben de ser iguales");
+            return BadRequest(new { Message = "Las contraseñas deben de ser iguales"});
         }
-        return Ok($"Usuario {model.Username} registrado");
+        return Ok(new { Message = $"Usuario {model.Username} registrado"} );
     }
     
     [HttpPost("Login")]

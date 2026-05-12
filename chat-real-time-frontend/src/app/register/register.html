@@ -10,6 +10,7 @@
       <div class="space-y-1">
         <label class="block text-xs font-medium text-neutral-400 uppercase tracking-widest">Usuario</label>
         <input type="text" placeholder="Ingresar usuario" autocomplete="off"
+          [formField]="this.registerForm.username"
           class="w-full bg-neutral-900 border border-neutral-800 text-white placeholder-neutral-600 rounded-lg px-4 py-3 text-sm outline-none focus:border-neutral-600 focus:ring-1 focus:ring-neutral-600 transition" />
         <p class="mt-1 text-xs text-red-500">Campo obligatorio</p>
       </div>
@@ -17,6 +18,7 @@
       <div class="space-y-1">
         <label class="block text-xs font-medium text-neutral-400 uppercase tracking-widest">Contraseña</label>
         <input type="password" placeholder="Ingresar contraseña" autocomplete="off"
+          [formField]="this.registerForm.password"
           class="w-full bg-neutral-900 border border-neutral-800 text-white placeholder-neutral-600 rounded-lg px-4 py-3 text-sm outline-none focus:border-neutral-600 focus:ring-1 focus:ring-neutral-600 transition" />
         <p class="mt-1 text-xs text-red-500">Campo obligatorio</p>
       </div>
@@ -24,6 +26,7 @@
       <div class="space-y-1">
         <label class="block text-xs font-medium text-neutral-400 uppercase tracking-widest">Confirmar Contraseña</label>
         <input type="password" placeholder="Confirmar contraseña" autocomplete="off"
+          [formField]="this.registerForm.confirmPassword"
           class="w-full bg-neutral-900 border border-neutral-800 text-white placeholder-neutral-600 rounded-lg px-4 py-3 text-sm outline-none focus:border-neutral-600 focus:ring-1 focus:ring-neutral-600 transition" />
         <p class="mt-1 text-xs text-red-500">Campo obligatorio</p>
       </div>
@@ -37,7 +40,7 @@
         </a>
 
         <button type="submit"
-          class="flex-1 bg-white text-neutral-950 font-semibold text-sm rounded-lg px-4 py-3 hover:bg-neutral-200 disabled:opacity-30 disabled:cursor-not-allowed transition">
+          class="flex-1 bg-white text-neutral-950 font-semibold text-sm rounded-lg px-4 py-3 hover:bg-neutral-200 disabled:opacity-30 disabled:cursor-not-allowed transition cursor-pointer">
           Registrar cuenta
         </button>
       </div>
