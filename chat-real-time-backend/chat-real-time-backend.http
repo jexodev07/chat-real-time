@@ -1,0 +1,30 @@
+@host = http://localhost:5000
+
+POST {{host}}/api/user/register
+Accept: application/json
+Content-Type: application/json
+
+{
+    "username": "test",
+    "password": "123",
+    "confirmPassword": "123"
+}
+
+###
+
+POST {{host}}/api/user/login
+Accept: application/json
+Content-Type: application/json
+
+{
+    "username": "test",
+    "password": "123"
+}
+
+###
+
+
+GET {{host}}/api/user/list
+Accept: application/json
+
+###

@@ -1,0 +1,45 @@
+<div class="min-h-screen bg-neutral-950 flex items-center justify-center px-4">
+    <div class="w-full max-w-sm">
+
+        <div class="mb-8 text-center">
+            <h1 class="text-2xl font-semibold text-white tracking-tight">Inicia sesión</h1>
+        </div>
+
+        <form (submit)="this.submitLogin($event)" class="space-y-4">
+
+            <div class="space-y-1">
+                <label class="block text-xs font-medium text-neutral-400 uppercase tracking-widest">Usuario</label>
+                <input type="text" placeholder="Ingresar usuario" [formField]="this.loginForm.username"
+                    autocomplete="off"
+                    class="w-full bg-neutral-900 border border-neutral-800 text-white placeholder-neutral-600 rounded-lg px-4 py-3 text-sm outline-none focus:border-neutral-600 focus:ring-1 focus:ring-neutral-600 transition" />
+                @if (this.loginForm.username().invalid() && this.loginForm.username().touched()) {
+                <p class="mt-1 text-xs text-red-500">{{this.loginForm.username().errors()[0].message}}</p>
+                }
+            </div>
+
+            <div class="space-y-1">
+                <label class="block text-xs font-medium text-neutral-400 uppercase tracking-widest">Contraseña</label>
+                <input type="password" placeholder="Ingresar contraseña" [formField]="this.loginForm.password"
+                    autocomplete="off"
+                    class="w-full bg-neutral-900 border border-neutral-800 text-white placeholder-neutral-600 rounded-lg px-4 py-3 text-sm outline-none focus:border-neutral-600 focus:ring-1 focus:ring-neutral-600 transition" />
+                @if (this.loginForm.password().invalid() && this.loginForm.password().touched()) {
+                <p class="mt-1 text-xs text-red-500">{{this.loginForm.password().errors()[0].message}}</p>
+                }
+            </div>
+
+            <div class="flex gap-3 mt-2">
+
+                <a routerLink="/register"
+                    class="flex-1 flex items-center justify-center border border-neutral-700 text-neutral-300 font-semibold text-sm rounded-lg px-4 py-3 hover:bg-neutral-900 hover:text-white transition text-center cursor-pointer">
+                    Registrar cuenta
+                </a>
+
+                <button type="submit" [disabled]="this.loginForm().invalid()"
+                    class="flex-1 bg-white text-neutral-950 font-semibold text-sm rounded-lg px-4 py-3 hover:bg-neutral-200 disabled:opacity-30 disabled:cursor-not-allowed transition">
+                    Iniciar sesión
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>

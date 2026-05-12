@@ -1,0 +1,5 @@
+chat-real-time-backend/bin/
+chat-real-time-backend/obj/
+
+chat-real-time-frontend/node_modules/
+chat-real-time-frontend/.angular/
